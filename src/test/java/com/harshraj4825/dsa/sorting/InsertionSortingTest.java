@@ -4,9 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class BubbleSortingTest implements Sort{
-
-    private final Sort bubbleSort = new BubbleSort();
+public class InsertionSortingTest implements Sort{
+    private final Sort sort = new InsertionSort();
 
     @DataProvider(name = "integer-array")
     public Object[][] dataProvider(){
@@ -17,7 +16,7 @@ public class BubbleSortingTest implements Sort{
     @Override
     @Test(dataProvider = "integer-array")
     public void sort(int[] input) {
-        bubbleSort.sort(input);
+        sort.sort(input);
         Assert.assertEquals(input,new int[]{1,3,4,5,7});
     }
 }
